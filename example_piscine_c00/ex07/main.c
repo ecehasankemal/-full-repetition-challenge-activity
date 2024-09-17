@@ -5,7 +5,9 @@ int
     main(void)
 {
     my_putnbr(0);
+    my_putchar('\n');
     my_putnbr(-1);
+    my_putchar('\n');
     my_putnbr(1);
     my_putchar('\n');
     return (0);
