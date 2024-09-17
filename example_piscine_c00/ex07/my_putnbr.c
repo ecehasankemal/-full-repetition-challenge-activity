@@ -9,18 +9,21 @@ void
 void
     my_putnbr(int n)
 {
-    if (n < 0)
+    long    nbr;
+
+    nbr = n;
+    if (nbr < 0)
     {
         my_putchar('-');
-        my_putnbr(-n);
+        my_putnbr(-nbr);
     }
-    else if (n >= 10)
+    else if (nbr >= 10)
     {
-        my_putnbr(n / 10);
-        my_putnbr(n % 10);
+        my_putnbr(nbr / 10);
+        my_putnbr(nbr % 10);
     }
     else
     {
-        my_putchar(n + '0');
+        my_putchar(nbr + '0');
     }
 }
