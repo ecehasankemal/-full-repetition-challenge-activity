@@ -31,12 +31,11 @@ int
 {
     int     i;
     int     j;
-    int     k;
-    int     l;
+    int     h;
 
     if (index == 10)
     {
-        int h = 0;
+        h = 0;
         while (h < 10)
         {
             my_putnbr(arr[h]);
