@@ -86,8 +86,7 @@ int main() {
     XCloseDisplay(display);
     return 0;
 }
+
 // bu kodun mantıgını anlamak için alttaki youtube videosunu izleyebilirsiniz.
 // ben de oradan daha detaylı tahkik edeceğim.
 // link = https://www.youtube.com/watch?v=hpiILbMkF9w  (The Midpoint Circle Algorithm - Computerphile)
-
-

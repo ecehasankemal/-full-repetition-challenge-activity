@@ -146,6 +146,13 @@ void handleKeyRelease(XKeyEvent *event, t_characters *player1, t_characters *pla
 void update_animation(t_characters *character, Display *display, Window window) {
     XClearArea(display, window, character->coord.playerX, character->coord.playerY, character->width, character->height, False);
 
+    // Karakterin koşup koşmadığına bağlı olarak çerçeve gecikmesini ayarlayın
+    if (character->direct.isRun) {
+        character->frame_delay = 4; // Faster animation when running
+    } else {
+        character->frame_delay = 8; // Normal animation speed
+    }
+
     if (character->frame_counter >= character->frame_delay) {
         character->frame_counter = 0;
 
@@ -265,6 +272,7 @@ void render_character(Display *display, t_characters *character, Window window) 
         fprintf(stderr, "Current animation is NULL.\n");
     }
 }
+
 void loop(Display *display, Window window, t_characters *player1, t_characters *player2) {
     XEvent event;
     while (true) {
@@ -283,7 +291,6 @@ void loop(Display *display, Window window, t_characters *player1, t_characters *
         usleep(16667); // FPS ayarı (yaklaşık 60 FPS)
     }
 }
-
 
 int main() {
     t_game game;

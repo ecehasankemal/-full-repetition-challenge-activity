@@ -168,7 +168,9 @@ int main() {
         printf("Pointer successfully freed and set to NULL\n");
 
     ptr = my_strdup("hello, world");  // Yeni bir string oluştur
-    if (ptr) {
+    if (ptr)
+    {
+        printf("Allocated memory: ");
         puts(ptr);  // String'i yazdır
         my_free(&ptr);  // Belleği serbest bırak
     }
